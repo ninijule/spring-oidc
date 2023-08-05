@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/questioncv'
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: mysecretpassword
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.json
+    default-schema: public
+    enabled: true
+    drop-first: false
+  sql:
+    init:
+      mode: always
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: client-app1
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: 'http://localhost:8080/realms/thales'
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: 'http://localhost:8080/realms/thales'
+server:
+  port: '5050'
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

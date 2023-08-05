@@ -1,0 +1,59 @@
+{
+  "databaseChangeLog": [
+    {},
+    {
+      "changeSet": {
+        "id": "createTable-User",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "catalogName": "user",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "firstname",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "lastname",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "email",
+                    "type": "text",
+                    "constraints": {
+                      "unique": true
+                    }
+                  }
+                }
+              ],
+              "remarks": "Table which contains all users information's",
+              "tableName": "user"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

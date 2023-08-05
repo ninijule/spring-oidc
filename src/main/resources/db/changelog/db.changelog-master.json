@@ -1,0 +1,8 @@
+{
+  "databaseChangeLog": [
+    {},
+    {
+      "include": {"file": ".\\0.1\\schema\\schema.json", "relativeToChangelogFile":  true}
+    }
+  ]
+}
