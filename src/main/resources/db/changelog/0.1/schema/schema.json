@@ -53,6 +53,138 @@
           }
         ]
       }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Logs-User",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_user",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "action",
+                    "type": "text"
+                  }
+                }
+              ],
+              "remarks": "Table which contains all users information's",
+              "tableName": "users"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Roles",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_user",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_role",
+                    "type": "BIGSERIAL"
+                  }
+                }
+              ],
+              "remarks": "Table which contains all roles users information's",
+              "tableName": "role"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Roles-Ref",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "type",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_role",
+                    "type": "BIGSERIAL"
+                  }
+                }
+              ],
+              "remarks": "Table which contains all roles users information's",
+              "tableName": "role"
+            }
+          }
+        ]
+      }
     }
   ]
 }
