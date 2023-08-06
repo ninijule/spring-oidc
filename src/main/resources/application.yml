@@ -4,6 +4,11 @@ spring:
     driverClassName: org.postgresql.Driver
     username: postgres
     password: mysecretpassword
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.json
     default-schema: public

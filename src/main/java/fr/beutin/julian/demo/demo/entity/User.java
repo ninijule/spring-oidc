@@ -3,7 +3,7 @@ package fr.beutin.julian.demo.demo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User extends AbstractEntity {
 
     @Column(name = "name")
