@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -45,29 +46,32 @@ class SecurityConfig {
         httpSecurity.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(authorize ->
                 authorize.requestMatchers("/*").authenticated());
 
-        httpSecurity.oauth2ResourceServer().jwt(jwt -> jwt.authenticationManager(authentication -> {
-            Object token = authentication.getPrincipal();
-            ObjectMapper objectMapper = new ObjectMapper();
+        httpSecurity.oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()).jwt(jwtConfigurer -> {
+           jwtConfigurer.authenticationManager((authentication -> {
+                Object token = authentication.getPrincipal();
+                ObjectMapper objectMapper = new ObjectMapper();
 
-            logger.info(" donnée de l'utilisateur : {}", authentication.getPrincipal());
+                logger.info(" donnée de l'utilisateur : {}", authentication.getPrincipal());
 
-            Base64.Decoder decoder = Base64.getUrlDecoder();
-            String[] chunks = token.toString().split("\\.");
+                Base64.Decoder decoder = Base64.getUrlDecoder();
+                String[] chunks = token.toString().split("\\.");
 
-            logger.info("Données du chunk : {} ", new String(decoder.decode(chunks[1])));
+                logger.info("Données du chunk : {} ", new String(decoder.decode(chunks[1])));
 
-            TokenAuth tokenAuth;
-            try {
-                tokenAuth = objectMapper.readValue(new String(decoder.decode(chunks[1])), TokenAuth.class);
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
+                TokenAuth tokenAuth;
+                try {
+                    tokenAuth = objectMapper.readValue(new String(decoder.decode(chunks[1])), TokenAuth.class);
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
 
-            logger.info(tokenAuth.getEmail());
+                logger.info(tokenAuth.getEmail());
 
 
-            return authentication;
+                return authentication;
+            }));
         }));
+
 
 
         return httpSecurity.build();

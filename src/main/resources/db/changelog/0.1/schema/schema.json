@@ -92,7 +92,7 @@
                 }
               ],
               "remarks": "Table which contains all users information's",
-              "tableName": "users"
+              "tableName": "logs"
             }
           }
         ]
@@ -180,7 +180,7 @@
                 }
               ],
               "remarks": "Table which contains all roles users information's",
-              "tableName": "role"
+              "tableName": "role_ref"
             }
           }
         ]
@@ -267,8 +267,8 @@
                   }
                 }
               ],
-              "remarks": "Table which contains jobs",
-              "tableName": "job"
+              "remarks": "Table which contains categories",
+              "tableName": "categorie"
             }
           }
         ]
