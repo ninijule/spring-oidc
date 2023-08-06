@@ -185,6 +185,194 @@
           }
         ]
       }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Job",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "description",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_categorie",
+                    "type": "BIGSERIAL"
+                  }
+                }
+              ],
+              "remarks": "Table which contains jobs",
+              "tableName": "job"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Categorie",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "text"
+                  }
+                }
+              ],
+              "remarks": "Table which contains jobs",
+              "tableName": "job"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Technologies",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "description",
+                    "type": "text"
+                  }
+                }
+              ],
+              "remarks": "Table which contains all technologies",
+              "tableName": "technologies"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Questions",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "question",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_answer",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_technologie",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "id_level",
+                    "type": "BIGSERIAL"
+                  }
+                }
+              ],
+              "remarks": "Table which contains all question's",
+              "tableName": "question"
+            }
+          }
+        ]
+      }
     }
   ]
 }
