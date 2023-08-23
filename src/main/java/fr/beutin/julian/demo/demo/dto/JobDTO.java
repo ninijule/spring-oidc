@@ -8,7 +8,7 @@ public class JobDTO {
 
     private String name;
     private String description;
-    private List<Skill> skills = new ArrayList<>();
+    private List<SkillDTO> skillDTOS = new ArrayList<>();
 
 
     public String getName() {
@@ -27,11 +27,11 @@ public class JobDTO {
         this.description = description;
     }
 
-    public List<Skill> getSkills() {
-        return skills;
+    public List<SkillDTO> getSkills() {
+        return skillDTOS;
     }
 
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
+    public void setSkills(List<SkillDTO> skillDTOS) {
+        this.skillDTOS = skillDTOS;
     }
 }

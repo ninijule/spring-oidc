@@ -1,6 +1,6 @@
 package fr.beutin.julian.demo.demo.dto;
 
-public class Skill {
+public class SkillDTO {
 
     private String name;
 
