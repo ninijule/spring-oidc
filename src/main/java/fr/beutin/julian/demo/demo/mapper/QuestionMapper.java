@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface MovieMapper {
+public interface QuestionMapper {
 
     List<MovieDTO> map(List<User> movie);
 

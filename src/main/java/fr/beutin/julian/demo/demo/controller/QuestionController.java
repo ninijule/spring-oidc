@@ -1,11 +1,8 @@
 package fr.beutin.julian.demo.demo.controller;
 
-import com.nimbusds.jose.proc.SecurityContext;
+import fr.beutin.julian.demo.demo.mapper.QuestionMapper;
 import fr.beutin.julian.demo.demo.service.UserService;
 import fr.beutin.julian.demo.demo.dto.MovieDTO;
-import fr.beutin.julian.demo.demo.mapper.MovieMapper;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,16 +18,16 @@ public class QuestionController {
 
     private final UserService userService;
 
-    private final MovieMapper movieMapper;
+    private final QuestionMapper questionMapper;
 
-    public QuestionController(UserService userService, MovieMapper movieMapper) {
+    public QuestionController(UserService userService, QuestionMapper questionMapper) {
         this.userService = userService;
-        this.movieMapper = movieMapper;
+        this.questionMapper = questionMapper;
     }
 
     @GetMapping("")
-    public List<MovieDTO> getAllMovies() {
-        return movieMapper.map(userService.getMovie());
+    public List<MovieDTO> getQuestions() {
+        return questionMapper.map(userService.getMovie());
 
     }
 

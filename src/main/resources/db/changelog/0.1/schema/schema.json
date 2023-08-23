@@ -221,12 +221,6 @@
                     "name": "description",
                     "type": "text"
                   }
-                },
-                {
-                  "column": {
-                    "name": "id_categorie",
-                    "type": "BIGSERIAL"
-                  }
                 }
               ],
               "remarks": "Table which contains jobs",
@@ -238,45 +232,7 @@
     },
     {
       "changeSet": {
-        "id": "createTable-Categorie",
-        "author": "J.B",
-        "changes": [
-          {
-            "tagDatabase": {
-              "tag": "0.1"
-            },
-            "createTable": {
-              "columns": [
-                {
-                  "column": {
-                    "name": "id",
-                    "type": "BIGSERIAL"
-                  }
-                },
-                {
-                  "column": {
-                    "name": "entity_version",
-                    "type": "text",
-                    "defaultValue": "0"
-                  }
-                },
-                {
-                  "column": {
-                    "name": "name",
-                    "type": "text"
-                  }
-                }
-              ],
-              "remarks": "Table which contains categories",
-              "tableName": "categorie"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "changeSet": {
-        "id": "createTable-Technologies",
+        "id": "createTable-Skill",
         "author": "J.B",
         "changes": [
           {
@@ -311,8 +267,58 @@
                   }
                 }
               ],
+              "remarks": "Table which contains skills",
+              "tableName": "skill"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "createTable-Technology",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "createTable": {
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "entity_version",
+                    "type": "text",
+                    "defaultValue": "0"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "skill_id",
+                    "type": "BIGSERIAL"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "text"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "description",
+                    "type": "text"
+                  }
+                }
+              ],
               "remarks": "Table which contains all technologies",
-              "tableName": "technologies"
+              "tableName": "technology"
             }
           }
         ]
