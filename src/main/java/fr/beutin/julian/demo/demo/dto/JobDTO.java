@@ -9,7 +9,7 @@ public class JobDTO {
     private String name;
     private String description;
     private List<SkillDTO> skillDTOS = new ArrayList<>();
-
+    private List<TechnologyDTO> technologyDTOS = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -33,5 +33,13 @@ public class JobDTO {
 
     public void setSkills(List<SkillDTO> skillDTOS) {
         this.skillDTOS = skillDTOS;
+    }
+
+    public List<TechnologyDTO> getTechnologyDTOS() {
+        return technologyDTOS;
+    }
+
+    public void setTechnologyDTOS(List<TechnologyDTO> technologyDTOS) {
+        this.technologyDTOS = technologyDTOS;
     }
 }
