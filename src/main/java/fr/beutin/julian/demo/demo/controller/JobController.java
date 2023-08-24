@@ -1,6 +1,7 @@
 package fr.beutin.julian.demo.demo.controller;
 
 import fr.beutin.julian.demo.demo.dto.JobDTO;
+import fr.beutin.julian.demo.demo.entity.Job;
 import fr.beutin.julian.demo.demo.mapper.JobMapper;
 import fr.beutin.julian.demo.demo.service.JobService;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,7 @@ public class JobController {
 
     @GetMapping("")
     public ResponseEntity<List<JobDTO>> getAllJobs(){
-       return new ResponseEntity<>(jobMapper.map(jobService.getAllJob()), HttpStatus.OK);
+        List<Job> job = jobService.getAllJob();
+       return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
     }
 }

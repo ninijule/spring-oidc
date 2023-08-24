@@ -29,6 +29,4 @@ public class TechnologyDTO {
     public void setVersion(String version) {
         this.version = version;
     }
-
-
 }
