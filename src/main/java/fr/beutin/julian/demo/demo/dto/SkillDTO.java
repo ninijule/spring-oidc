@@ -7,7 +7,9 @@ public class SkillDTO {
 
     private String name;
 
-    private List<TechnologyDTO> technologyDTOS = new ArrayList<>();
+    private String description;
+
+    private List<TechnologyDTO> technology = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -17,11 +19,21 @@ public class SkillDTO {
         this.name = name;
     }
 
-    public List<TechnologyDTO> getTechnologyDTOS() {
-        return technologyDTOS;
+
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setTechnologyDTOS(List<TechnologyDTO> technologyDTOS) {
-        this.technologyDTOS = technologyDTOS;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<TechnologyDTO> getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(List<TechnologyDTO> technology) {
+        this.technology = technology;
     }
 }
