@@ -350,26 +350,20 @@
                 },
                 {
                   "column": {
-                    "name": "question",
+                    "name": "ask",
                     "type": "text"
                   }
                 },
                 {
                   "column": {
-                    "name": "id_answer",
-                    "type": "BIGSERIAL"
+                    "name": "answer",
+                    "type": "text"
                   }
                 },
                 {
                   "column": {
-                    "name": "id_technologie",
-                    "type": "BIGSERIAL"
-                  }
-                },
-                {
-                  "column": {
-                    "name": "id_level",
-                    "type": "BIGSERIAL"
+                    "name": "level",
+                    "type": "text"
                   }
                 }
               ],
@@ -379,7 +373,6 @@
           }
         ]
       }
-    },
-
+    }
   ]
 }
