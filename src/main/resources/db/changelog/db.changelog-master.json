@@ -3,6 +3,9 @@
     {},
     {
       "include": {"file": ".\\0.1\\schema\\schema.json", "relativeToChangelogFile":  true}
+    },
+    {
+      "include": {"file": ".\\0.1\\schema\\constraint.json", "relativeToChangelogFile":  true}
     }
   ]
 }

@@ -1,0 +1,85 @@
+{
+  "databaseChangeLog": [
+    {},
+    {
+      "changeSet": {
+        "id": "addPrimaryKey-Table-job",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "addPrimaryKey": {
+              "clustered": true,
+              "columnNames": "id",
+              "constraintName": "pk_job",
+              "tableName": "job",
+              "validate": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "addPrimaryKey-Table-skill",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "addPrimaryKey": {
+              "clustered": true,
+              "columnNames": "id",
+              "constraintName": "pk_skill",
+              "tableName": "skill",
+              "validate": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "addPrimaryKey-Table-technology",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "addPrimaryKey": {
+              "clustered": true,
+              "columnNames": "id",
+              "constraintName": "pk_technology",
+              "tableName": "technology",
+              "validate": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "addPrimaryKey-Table-question",
+        "author": "J.B",
+        "changes": [
+          {
+            "tagDatabase": {
+              "tag": "0.1"
+            },
+            "addPrimaryKey": {
+              "clustered": true,
+              "columnNames": "id",
+              "constraintName": "pk_question",
+              "tableName": "question",
+              "validate": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

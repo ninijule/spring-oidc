@@ -2,7 +2,7 @@ package fr.beutin.julian.demo.demo.dto;
 
 public class QuestionDTO {
 
-    private String question;
+    private String ask;
     private String answer;
     private String level;
 
@@ -16,19 +16,19 @@ public class QuestionDTO {
     }
 
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
     public String getAnswer() {
         return answer;
     }
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getAsk() {
+        return ask;
+    }
+
+    public void setAsk(String ask) {
+        this.ask = ask;
     }
 }

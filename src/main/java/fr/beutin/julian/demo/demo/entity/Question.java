@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Table(name = "question")
 public class Question extends AbstractEntity{
 
-    @Column(name = "question")
+    @Column(name = "ask")
     private String ask;
 
     @Column(name = "level")
