@@ -15,7 +15,11 @@ public class JobService {
         this.jobRepository = jobRepository;
     }
 
-    public List<Job> getAllJob() {
+    public List<Job> getAllJobsAndSkillsAndTechnologiesAndQuestions() {
         return this.jobRepository.findAll();
+    }
+
+    public List<Job> getAllJobs(){
+        return this.jobRepository.getAllJobs();
     }
 }

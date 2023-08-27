@@ -25,9 +25,15 @@ public class JobController {
         this.jobMapper = jobMapper;
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<JobDTO>> getAllJobsAndSkillsAndTechnologyAndQuestions  (){
+        List<Job> job = jobService.getAllJobsAndSkillsAndTechnologiesAndQuestions();
+       return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
+    }
+
     @GetMapping("")
     public ResponseEntity<List<JobDTO>> getAllJobs(){
-        List<Job> job = jobService.getAllJob();
-       return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
+        List<Job> job = jobService.getAllJobs();
+        return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
     }
 }

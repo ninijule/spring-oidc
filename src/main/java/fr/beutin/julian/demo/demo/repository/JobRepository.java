@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface JobRepository extends JpaRepository<Job, Long> {
 
-    @Query("SELECT jb FROM Job jb")
-    List<Job> getAllJob();
+    @Query("SELECT jb.name, jb.description FROM Job jb")
+    List<Job> getAllJobs();
 }

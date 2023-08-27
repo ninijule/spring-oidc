@@ -309,6 +309,12 @@
                     "name": "description",
                     "type": "text"
                   }
+                },
+                {
+                  "column": {
+                    "name": "version",
+                    "type": "text"
+                  }
                 }
               ],
               "remarks": "Table which contains all technologies",

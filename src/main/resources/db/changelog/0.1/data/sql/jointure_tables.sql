@@ -1,0 +1,8 @@
+--- JOB skills
+-- INSERT INTO job_skills(job_id, skills_id) VALUES (1, 1);
+--
+-- --- Skills Technology
+-- INSERT INTO skill_technology(skill_id, technology_id) VALUES (1,1);
+--
+-- --- Technology questions
+-- INSERT INTO technology_questions(technology_id, questions_id) VALUES (1,1);
