@@ -1,0 +1,8 @@
+{
+  "databaseChangeLog": [
+    {},
+    {
+      "include": {"file": ".\\0.1\\data\\sql\\job.sql", "relativeToChangelogFile":  true}
+    }
+  ]
+}
