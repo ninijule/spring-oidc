@@ -300,12 +300,6 @@
                 },
                 {
                   "column": {
-                    "name": "skill_id",
-                    "type": "BIGSERIAL"
-                  }
-                },
-                {
-                  "column": {
                     "name": "name",
                     "type": "text"
                   }
