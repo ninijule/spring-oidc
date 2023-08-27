@@ -1,0 +1,1 @@
+INSERT INTO technology (name, description, version) VALUES ('Anuglar 16', 'Framework Front-end', '16');
