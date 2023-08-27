@@ -2,7 +2,16 @@
   "databaseChangeLog": [
     {},
     {
-      "include": {"file": ".\\0.1\\data\\sql\\job.sql", "relativeToChangelogFile":  true}
+      "include": {"file": ".\\sql\\job.sql", "relativeToChangelogFile":  true}
+    },
+    {
+      "include": {"file": ".\\sql\\skill.sql", "relativeToChangelogFile":  true}
+    },
+    {
+      "include": {"file": ".\\sql\\question.sql", "relativeToChangelogFile":  true}
+    },
+    {
+      "include": {"file": ".\\sql\\technology.sql", "relativeToChangelogFile":  true}
     }
   ]
 }
