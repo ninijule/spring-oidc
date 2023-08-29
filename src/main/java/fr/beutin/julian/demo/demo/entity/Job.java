@@ -5,8 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "job")
@@ -19,7 +19,7 @@ public class Job extends AbstractEntity{
     private String description;
 
     @OneToMany
-    private List<Skill> skills = new ArrayList<>();
+    private Set<Skill> skills = new HashSet<>();
 
 
 
@@ -39,11 +39,12 @@ public class Job extends AbstractEntity{
         this.description = description;
     }
 
-    public List<Skill> getSkills() {
+
+    public Set<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(List<Skill> skills) {
+    public void setSkills(Set<Skill> skills) {
         this.skills = skills;
     }
 }

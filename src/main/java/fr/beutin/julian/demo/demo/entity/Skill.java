@@ -5,8 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "skill")
@@ -19,7 +19,7 @@ public class Skill extends AbstractEntity{
     private String description;
 
     @OneToMany
-    private List<Technology> technology = new ArrayList<>();
+    private Set<Technology> technology = new HashSet<>();
 
     public String getName() {
         return name;
@@ -38,11 +38,11 @@ public class Skill extends AbstractEntity{
     }
 
 
-    public List<Technology> getTechnology() {
+    public Set<Technology> getTechnology() {
         return technology;
     }
 
-    public void setTechnology(List<Technology> technology) {
+    public void setTechnology(Set<Technology> technology) {
         this.technology = technology;
     }
 }
