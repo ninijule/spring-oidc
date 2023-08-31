@@ -1,9 +1,6 @@
 package fr.beutin.julian.demo.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +18,7 @@ public class Technology extends AbstractEntity{
     @Column(name = "version")
     private String version;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Question> questions = new HashSet<>();
 
     public String getName() {

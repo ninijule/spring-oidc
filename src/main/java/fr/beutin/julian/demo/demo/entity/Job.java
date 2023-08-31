@@ -1,9 +1,6 @@
 package fr.beutin.julian.demo.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,10 +15,8 @@ public class Job extends AbstractEntity{
     @Column(name = "description")
     private String description;
 
-    @OneToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private Set<Skill> skills = new HashSet<>();
-
-
 
     public String getName() {
         return name;

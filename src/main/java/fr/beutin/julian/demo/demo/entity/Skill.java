@@ -1,16 +1,13 @@
 package fr.beutin.julian.demo.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "skill")
-public class Skill extends AbstractEntity{
+public class Skill extends AbstractEntity {
 
     @Column(name = "name")
     private String name;
@@ -18,7 +15,7 @@ public class Skill extends AbstractEntity{
     @Column(name = "description")
     private String description;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Technology> technology = new HashSet<>();
 
     public String getName() {
