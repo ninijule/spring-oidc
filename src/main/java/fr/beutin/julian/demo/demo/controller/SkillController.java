@@ -26,7 +26,7 @@ public class SkillController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<SkillDTO>> getAllSkills() {
         List<Skill> skills = skillService.getAllService();
         return new ResponseEntity<>(skillMapper.map(skills), HttpStatus.OK);
