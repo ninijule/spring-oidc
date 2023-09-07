@@ -1,4 +1,4 @@
-package fr.beutin.julian.demo.demo.service.Impl;
+package fr.beutin.julian.demo.demo.service.impl;
 
 
 import fr.beutin.julian.demo.demo.entity.Skill;
