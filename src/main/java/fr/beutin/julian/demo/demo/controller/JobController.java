@@ -1,6 +1,6 @@
 package fr.beutin.julian.demo.demo.controller;
 
-import fr.beutin.julian.demo.demo.dto.JobDTO;
+import fr.beutin.julian.demo.demo.dto.job.JobDTO;
 import fr.beutin.julian.demo.demo.entity.Job;
 import fr.beutin.julian.demo.demo.mapper.JobMapper;
 import fr.beutin.julian.demo.demo.service.JobService;
@@ -23,12 +23,6 @@ public class JobController {
     public JobController(JobService jobService, JobMapper jobMapper) {
         this.jobService = jobService;
         this.jobMapper = jobMapper;
-    }
-
-    @GetMapping("/all")
-    public ResponseEntity<List<JobDTO>> getAllJobsAndSkillsAndTechnologyAndQuestions() {
-        List<Job> job = jobService.getAllJobsAndSkillsAndTechnologiesAndQuestions();
-        return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
     }
 
     @GetMapping("")
