@@ -1,12 +1,14 @@
 package fr.beutin.julian.demo.demo.controller;
 
 import fr.beutin.julian.demo.demo.dto.job.JobDTO;
+import fr.beutin.julian.demo.demo.dto.job.JobWithSkillAssociatedDTO;
 import fr.beutin.julian.demo.demo.entity.Job;
 import fr.beutin.julian.demo.demo.mapper.JobMapper;
 import fr.beutin.julian.demo.demo.service.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +30,12 @@ public class JobController {
     @GetMapping("")
     public ResponseEntity<List<JobDTO>> getAllJobs() {
         List<Job> job = jobService.getAllJobs();
-        return new ResponseEntity<>(jobMapper.map(job), HttpStatus.OK);
+        return new ResponseEntity<>(jobMapper.mapToListJobDTO(job), HttpStatus.OK);
+    }
+
+    @GetMapping("/{jobId}")
+    public ResponseEntity<JobWithSkillAssociatedDTO> getSkillsbyJobName(@PathVariable Long jobId) {
+        Job job = jobService.getSkillsbyJobId(jobId);
+        return new ResponseEntity<>(jobMapper.mapToJobWithSkill(job), HttpStatus.OK);
     }
 }

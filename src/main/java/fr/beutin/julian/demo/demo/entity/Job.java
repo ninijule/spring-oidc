@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "job")
-public class Job extends AbstractEntity{
+public class Job extends AbstractEntity {
 
     @Column(name = "name")
     private String name;
@@ -15,7 +15,8 @@ public class Job extends AbstractEntity{
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(name = "job_skills", joinColumns = {@JoinColumn(name = "job_id")}, inverseJoinColumns = {@JoinColumn(name = "skills_id")})
     private Set<Skill> skills = new HashSet<>();
 
     public String getName() {
