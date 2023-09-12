@@ -18,6 +18,11 @@ public class Technology extends AbstractEntity{
     @Column(name = "version")
     private String version;
 
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "technologies")
+    private Set<Skill> skills = new HashSet<>();
+
+
     @OneToMany(fetch = FetchType.LAZY)
     private Set<Question> questions = new HashSet<>();
 
@@ -51,5 +56,13 @@ public class Technology extends AbstractEntity{
 
     public void setQuestions(Set<Question> questions) {
         this.questions = questions;
+    }
+
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
     }
 }

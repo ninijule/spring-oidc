@@ -1,6 +1,7 @@
 package fr.beutin.julian.demo.demo.entity;
 
- import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +18,13 @@ public class Skill extends AbstractEntity {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "skills")
     private Set<Job> jobs = new HashSet<>();
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(name = "skill_technology", joinColumns = {@JoinColumn(name = "skill_id")}, inverseJoinColumns = {@JoinColumn(name = "technology_id")})
+    @JsonIgnore
+    private Set<Technology> technologies = new HashSet<>();
+
 
     public String getName() {
         return name;
@@ -40,5 +48,13 @@ public class Skill extends AbstractEntity {
 
     public void setJobs(Set<Job> jobs) {
         this.jobs = jobs;
+    }
+
+    public Set<Technology> getTechnologies() {
+        return technologies;
+    }
+
+    public void setTechnologies(Set<Technology> technologies) {
+        this.technologies = technologies;
     }
 }
