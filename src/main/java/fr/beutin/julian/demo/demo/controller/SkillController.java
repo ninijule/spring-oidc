@@ -1,5 +1,6 @@
 package fr.beutin.julian.demo.demo.controller;
 
+import fr.beutin.julian.demo.demo.dto.SkillDTO;
 import fr.beutin.julian.demo.demo.entity.Skill;
 import fr.beutin.julian.demo.demo.mapper.SkillMapper;
 import fr.beutin.julian.demo.demo.service.SkillService;
@@ -26,9 +27,9 @@ public class SkillController {
     }
 
     @GetMapping("/{jobId}")
-    public ResponseEntity<List<Skill>> getSkillsbyJobId(@PathVariable Long jobId) {
-        List<Skill> job = skillService.getSkillsbyJobId(jobId);
-        return new ResponseEntity<>(job, HttpStatus.OK);
+    public ResponseEntity<List<SkillDTO>> getSkillsbyJobId(@PathVariable Long jobId) {
+        List<Skill> skillList = skillService.getSkillsbyJobId(jobId);
+        return new ResponseEntity<>(skillMapper.toSkillDTO(skillList), HttpStatus.OK);
     }
 
 

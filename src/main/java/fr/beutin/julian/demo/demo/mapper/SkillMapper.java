@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface SkillMapper {
 
-    List<SkillDTO> map(List<Skill> skills);
+    List<SkillDTO> toSkillDTO(List<Skill> skills);
 }
 
 
