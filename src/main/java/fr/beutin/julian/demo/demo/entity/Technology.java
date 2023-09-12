@@ -18,7 +18,7 @@ public class Technology extends AbstractEntity{
     @Column(name = "version")
     private String version;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     private Set<Question> questions = new HashSet<>();
 
     public String getName() {
