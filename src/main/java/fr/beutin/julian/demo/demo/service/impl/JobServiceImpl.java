@@ -21,13 +21,5 @@ public class JobServiceImpl implements JobService {
         return this.jobRepository.findAll();
     }
 
-    /**
-     * @param jobId
-     * @return
-     */
-    @Override
-    public Job getSkillsbyJobId(Long jobId) {
-        return this.jobRepository.getSkillsbyJobId(jobId);
-    }
 
 }
