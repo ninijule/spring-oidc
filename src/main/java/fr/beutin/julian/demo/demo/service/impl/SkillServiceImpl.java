@@ -2,6 +2,7 @@ package fr.beutin.julian.demo.demo.service.impl;
 
 
 import fr.beutin.julian.demo.demo.entity.Skill;
+import fr.beutin.julian.demo.demo.entity.Technology;
 import fr.beutin.julian.demo.demo.repository.SkillRepository;
 import fr.beutin.julian.demo.demo.service.SkillService;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,15 @@ public class SkillServiceImpl implements SkillService {
     public List<Skill> getSkillsbyJobId(Long jobId) {
         return this.skillRepository.getSkillsbyJobId(jobId);
     }
+
+    /**
+     * @param skillId
+     * @return
+     */
+    @Override
+    public List<Technology> getTechnologyBySkillId(String skillId) {
+        return this.skillRepository.getTechnologiesBySkillId(skillId);
+    }
+
 
 }

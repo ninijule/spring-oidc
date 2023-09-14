@@ -2,6 +2,9 @@ package fr.beutin.julian.demo.demo.dto;
 
 public class SkillDTO {
 
+
+    private Long id;
+
     private String name;
 
     private String description;
@@ -22,4 +25,11 @@ public class SkillDTO {
         this.description = description;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
