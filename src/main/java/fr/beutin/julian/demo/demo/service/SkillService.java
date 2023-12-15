@@ -11,7 +11,7 @@ public interface SkillService {
 
     List<Skill> getSkillsbyJobId(Long jobId);
 
-    List<Technology> getTechnologyBySkillId(String skillId);
+    List<Technology> getTechnologyBySkillId(List<Long> skillId);
 
 
 }

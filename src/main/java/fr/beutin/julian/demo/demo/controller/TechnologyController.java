@@ -1,6 +1,7 @@
 package fr.beutin.julian.demo.demo.controller;
 
 
+import fr.beutin.julian.demo.demo.dto.TechnologySkillDTO;
 import fr.beutin.julian.demo.demo.entity.Technology;
 import fr.beutin.julian.demo.demo.service.SkillService;
 import org.springframework.http.HttpStatus;
@@ -24,9 +25,9 @@ public class TechnologyController {
     }
 
 
-    @PostMapping("/")
-    public ResponseEntity<List<Technology>> getTechnologiesbySkillId(@RequestBody List<String> skillIdList) {
-        List<Technology> technologyList = skillService.getTechnologyBySkillId(String.valueOf(skillIdList));
+    @PostMapping("")
+    public ResponseEntity<List<Technology>> getTechnologiesbySkillId(@RequestBody TechnologySkillDTO skillIdList) {
+        List<Technology> technologyList = skillService.getTechnologyBySkillId(skillIdList.getSkillIdList());
         return new ResponseEntity<>(technologyList, HttpStatus.OK);
     }
 

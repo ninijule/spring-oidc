@@ -34,7 +34,7 @@ public class SkillServiceImpl implements SkillService {
      * @return
      */
     @Override
-    public List<Technology> getTechnologyBySkillId(String skillId) {
+    public List<Technology> getTechnologyBySkillId(List<Long> skillId) {
         return this.skillRepository.getTechnologiesBySkillId(skillId);
     }
 
