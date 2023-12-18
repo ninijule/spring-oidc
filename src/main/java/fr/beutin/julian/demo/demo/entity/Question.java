@@ -1,9 +1,7 @@
 package fr.beutin.julian.demo.demo.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "question")
@@ -17,6 +15,17 @@ public class Question extends AbstractEntity{
 
     @Column(name = "answer")
     private String answer;
+
+    public Technology getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(Technology technology) {
+        this.technology = technology;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    Technology technology;
 
     public String getAsk() {
         return ask;

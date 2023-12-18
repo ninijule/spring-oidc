@@ -6,6 +6,7 @@ import fr.beutin.julian.demo.demo.dto.TechnologySkillDTO;
 import fr.beutin.julian.demo.demo.entity.Technology;
 import fr.beutin.julian.demo.demo.mapper.TechnologyMapper;
 import fr.beutin.julian.demo.demo.service.SkillService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +33,7 @@ public class TechnologyController {
 
 
     @PostMapping("")
-    public ResponseEntity<List<TechnologyDTO>> getTechnologiesbySkillId(@RequestBody TechnologySkillDTO skillIdList) {
+    public ResponseEntity<List<TechnologyDTO>> getTechnologiesbySkillId(@Valid @RequestBody TechnologySkillDTO skillIdList) {
         List<Technology> technologyList = skillService.getTechnologyBySkillId(skillIdList.getSkillIdList());
         return new ResponseEntity<>(technologyMapper.mapToListTechnologyDTO(technologyList), HttpStatus.OK);
     }

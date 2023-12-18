@@ -1,15 +1,10 @@
 package fr.beutin.julian.demo.demo.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TechnologyDTO {
 
     private String name;
     private String description;
     private String version;
-
-    private List<QuestionDTO> questions = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -35,11 +30,4 @@ public class TechnologyDTO {
         this.version = version;
     }
 
-    public List<QuestionDTO> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<QuestionDTO> questions) {
-        this.questions = questions;
-    }
-}
+ }
