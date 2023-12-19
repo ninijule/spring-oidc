@@ -5,15 +5,24 @@ import java.util.List;
 
 public class GenerateQuestionDTO {
 
-    List<Long> skillIdList = new ArrayList<>();
+    private List<String> technologyList = new ArrayList<>();
+
+    private Long numberOfQuestions;
 
 
-    public List<Long> getSkillIdList() {
-        return skillIdList;
+    public List<String> getTechnologyList() {
+        return technologyList;
     }
 
-    public void setSkillIdList(List<Long> skillIdList) {
-        this.skillIdList = skillIdList;
+    public void setTechnologyList(List<String> technologyList) {
+        this.technologyList = technologyList;
     }
 
+    public Long getNumberOfQuestions() {
+        return numberOfQuestions;
+    }
+
+    public void setNumberOfQuestions(Long numberOfQuestions) {
+        this.numberOfQuestions = numberOfQuestions;
+    }
 }

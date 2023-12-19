@@ -23,7 +23,7 @@ public class Technology extends AbstractEntity{
     private Set<Skill> skills = new HashSet<>();
 
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "technology")
     private Set<Question> questions = new HashSet<>();
 
     public String getName() {

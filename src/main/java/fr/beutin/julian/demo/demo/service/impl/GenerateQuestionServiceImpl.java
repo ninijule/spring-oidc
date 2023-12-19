@@ -1,8 +1,8 @@
 package fr.beutin.julian.demo.demo.service.impl;
 
 
-import fr.beutin.julian.demo.demo.entity.Question;
-import fr.beutin.julian.demo.demo.repository.QuestionRepository;
+import fr.beutin.julian.demo.demo.entity.Technology;
+import fr.beutin.julian.demo.demo.repository.TechnologyRepository;
 import fr.beutin.julian.demo.demo.service.GenerateQuestionService;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,10 @@ import java.util.List;
 public class GenerateQuestionServiceImpl implements GenerateQuestionService {
 
 
-    QuestionRepository questionRepository;
+    TechnologyRepository technologyRepository;
 
-    public GenerateQuestionServiceImpl(QuestionRepository questionRepository) {
-        this.questionRepository = questionRepository;
+    public GenerateQuestionServiceImpl(TechnologyRepository technologyRepository) {
+        this.technologyRepository = technologyRepository;
     }
 
 
@@ -23,7 +23,7 @@ public class GenerateQuestionServiceImpl implements GenerateQuestionService {
      * @return
      */
     @Override
-    public List<Question> getAllQuestions(List<Long> skillId) {
-        return this.questionRepository.getAllQuestionBySKillId(skillId);
+    public List<Technology> getAllTechnologyWithQuestions(List<String> technologyList, Long numberOfQuestion) {
+        return this.technologyRepository.getAllTechnologyWithQuestions(technologyList);
     }
 }

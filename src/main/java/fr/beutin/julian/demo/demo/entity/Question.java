@@ -16,16 +16,9 @@ public class Question extends AbstractEntity{
     @Column(name = "answer")
     private String answer;
 
-    public Technology getTechnology() {
-        return technology;
-    }
-
-    public void setTechnology(Technology technology) {
-        this.technology = technology;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    Technology technology;
+    @ManyToOne
+    @JoinColumn(name = "technology_id",nullable = false)
+    private Technology technology;
 
     public String getAsk() {
         return ask;
@@ -49,5 +42,13 @@ public class Question extends AbstractEntity{
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public Technology getTechnology() {
+        return technology;
+    }
+
+    public void setTechnology(Technology technology) {
+        this.technology = technology;
     }
 }
