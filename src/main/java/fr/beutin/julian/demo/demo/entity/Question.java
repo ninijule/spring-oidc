@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "question")
-public class Question extends AbstractEntity{
+public class Question extends AbstractEntity {
 
     @Column(name = "ask")
     private String ask;
@@ -17,7 +17,7 @@ public class Question extends AbstractEntity{
     private String answer;
 
     @ManyToOne
-    @JoinColumn(name = "technology_id",nullable = false)
+    @JoinTable(name = "technology_questions", joinColumns = {@JoinColumn(name = "questions_id")}, inverseJoinColumns = {@JoinColumn(name = "technology_id")})
     private Technology technology;
 
     public String getAsk() {
