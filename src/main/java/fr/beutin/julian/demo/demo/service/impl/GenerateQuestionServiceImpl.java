@@ -6,8 +6,6 @@ import fr.beutin.julian.demo.demo.repository.TechnologyRepository;
 import fr.beutin.julian.demo.demo.service.GenerateQuestionService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class GenerateQuestionServiceImpl implements GenerateQuestionService {
 
@@ -23,7 +21,7 @@ public class GenerateQuestionServiceImpl implements GenerateQuestionService {
      * @return
      */
     @Override
-    public List<Technology> getAllTechnologyWithQuestions(List<String> technologyList, Long numberOfQuestion) {
-        return this.technologyRepository.getAllTechnologyWithQuestions(technologyList);
+    public Technology getAllTechnologyWithQuestions(String name, String version) {
+        return this.technologyRepository.getAllTechnologyWithQuestions(name, version);
     }
 }

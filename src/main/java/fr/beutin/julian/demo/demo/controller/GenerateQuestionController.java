@@ -2,6 +2,7 @@ package fr.beutin.julian.demo.demo.controller;
 
 import fr.beutin.julian.demo.demo.dto.GenerateQuestionDTO;
 import fr.beutin.julian.demo.demo.dto.GeneratedQuestionDTO;
+import fr.beutin.julian.demo.demo.dto.TechnologyDTO;
 import fr.beutin.julian.demo.demo.entity.Technology;
 import fr.beutin.julian.demo.demo.mapper.GeneratedQuestionMapper;
 import fr.beutin.julian.demo.demo.service.GenerateQuestionService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -33,7 +35,11 @@ public class GenerateQuestionController {
 
     @PostMapping("")
     public ResponseEntity<List<GeneratedQuestionDTO>> generateRandomQuestions(@Valid @RequestBody GenerateQuestionDTO generateQuestionDTO) {
-        List<Technology> technologyList = generateQuestionService.getAllTechnologyWithQuestions(generateQuestionDTO.getTechnologyList(), generateQuestionDTO.getNumberOfQuestions());
+        List<Technology> technologyList = new ArrayList<>();
+        for (TechnologyDTO tech : generateQuestionDTO.getTechnologyList()) {
+            technologyList.add(generateQuestionService.getAllTechnologyWithQuestions(tech.getName(), tech.getVersion()));
+        }
+
         return new ResponseEntity<>(generatedQuestionMapper.mapToListGeneratedQuestionDTO(technologyList), HttpStatus.OK);
     }
 }
