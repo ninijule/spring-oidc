@@ -39,6 +39,7 @@ jobs:
           - 8091:8080
         volumes:
           - "/workspace/src/main/resources/keycloak:/src/main/resources/keycloak/"
+        options: --name keycloak --hostname keycloak
 
 
     steps:
