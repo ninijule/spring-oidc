@@ -29,6 +29,16 @@ jobs:
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      keycloak:
+        image: keycloak:latest
+        env:
+          KEYCLOAK_USER: admin
+          KEYCLOAK_PASSWORD: admin
+          JAVA_OPTS_APPEND: "-Dkeycloak.profile.feature.upload_scripts=enabled"
+        ports:
+          - 8091:8080
+        volumes:
+          - "/workspace/src/main/resources/keycloak:/src/main/resources/keycloak/"
 
 
     steps:
@@ -39,5 +49,15 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: List running containers
+      run: docker ps -a
+
+    - name: Setup Keycloak realm
+      run: |
+        docker exec -it keycloak sh -c 
+        "/opt/jboss/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin --password admin && 
+        /opt/jboss/keycloak/bin/kcadm.sh create realms -s realm=thales -s enabled=true && 
+        /opt/jboss/keycloak/bin/kcadm.sh create partialImport -r thales -s ifResourceExists=SKIP -o -f /src/main/resources/keycloak/realm.json"
+
     - name: Run Test
       run: mvn test
