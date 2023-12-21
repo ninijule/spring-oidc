@@ -55,7 +55,7 @@ jobs:
 
     - name: Setup Keycloak realm
       run: |
-        docker exec -T keycloak sh -c 
+        docker exec -i keycloak sh -c 
         "/opt/jboss/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin --password admin && 
         /opt/jboss/keycloak/bin/kcadm.sh create realms -s realm=thales -s enabled=true && 
         /opt/jboss/keycloak/bin/kcadm.sh create partialImport -r thales -s ifResourceExists=SKIP -o -f /src/main/resources/keycloak/realm.json"
