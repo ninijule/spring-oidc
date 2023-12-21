@@ -32,11 +32,11 @@ jobs:
       keycloak:
         image: quay.io/keycloak/keycloak:latest
         env:
-          KEYCLOAK_USER: admin
-          KEYCLOAK_PASSWORD: admin
+          KEYCLOAK_ADMIN: admin
+          KEYCLOAK_ADMIN_PASSWORD: admin
           JAVA_OPTS_APPEND: "-Dkeycloak.profile.feature.upload_scripts=enabled"
         ports:
-          - 8091:8080
+          - 8080:8080
         volumes:
           - "/workspace/src/main/resources/keycloak:/src/main/resources/keycloak/"
         options: --name keycloak --hostname keycloak
