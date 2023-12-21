@@ -38,7 +38,7 @@ jobs:
           - 8080:8080
         volumes:
           - "/workspace/src/main/resources/keycloak:/src/main/resources/keycloak/"
-        options: start-dev --name keycloak --hostname keycloak
+        options:  --name keycloak --hostname keycloak start-dev
 
 
     steps:
